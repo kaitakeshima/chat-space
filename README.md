@@ -4,7 +4,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer||
 |name|string|null: false, index: true|
 |password|string||
 |email|string||
@@ -12,19 +11,18 @@
 ### Association
 - has_many :messages
 - has_many :groups, through: :members
-- belongs_to :member
+- has_many :members
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer||
 |group_name|string|null: false|
 
 ### Association
 - has_many :messages
 - has_many :users, through: :members
-- belongs_to :member
+- has_many :members
 
 ## membersテーブル
 
@@ -41,8 +39,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer||
-|body|text|null: false|
+|body|text||
 |image|string||
 |user_id|string|null: false, foreign_key: true|
 |group_id|string|null: false, foreign_key: true|
