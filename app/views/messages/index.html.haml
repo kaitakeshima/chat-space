@@ -16,7 +16,8 @@
     .main-contents__header__group
       group
       .main-contents__header__group__edit
-        edit
+        = link_to edit_group_path(current_user) do 
+          Edit
     .main-contents__header__members
       Member : sample
   .main-contents__body
