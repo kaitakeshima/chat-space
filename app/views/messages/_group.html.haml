@@ -1,5 +1,16 @@
-.left-contents__groups__group
-  .left-contents__groups__group__name
-    sample
-  .left-contents__groups__group__message
-    まだメッセージはありません
+-# .left-contents__groups__group
+-#   - current_user.groups.each do |group|
+-#     = link_to group_messages_path(group) do
+-#   .left-contents__groups__group__name
+-#     = group.name
+-#   .left-contents__groups__group__message
+-#     まだメッセージはありません
+
+.groups
+  - current_user.groups.each do |group|
+    .group
+      = link_to group_messages_path(group) do
+        .group__name
+          = group.name
+        .group__message
+          メッセージはまだありません。
